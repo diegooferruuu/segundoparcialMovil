@@ -18,6 +18,7 @@ import com.calyrsoft.ucbp1.features.login.domain.repository.ILoginRepository
 import com.calyrsoft.ucbp1.features.login.domain.usecase.LoginUsecase
 import com.calyrsoft.ucbp1.features.login.presentation.LoginViewModel
 import com.calyrsoft.ucbp1.features.movies.data.api.MoviesService
+import com.calyrsoft.ucbp1.features.movies.data.datasource.MovieLocalDataSource
 import com.calyrsoft.ucbp1.features.movies.data.datasource.ThemoviedbDataSource
 import com.calyrsoft.ucbp1.features.movies.data.repository.MoviesRepository
 import com.calyrsoft.ucbp1.features.movies.domain.repository.IMoviesRepository
@@ -49,8 +50,11 @@ val appModule = module {
     single<MoviesService>{
         get<Retrofit>().create(MoviesService::class.java)
     }
+    single { com.calyrsoft.ucbp1.features.movies.data.database.AppRoomDatabase.getDatabase(get())}
     single{ ThemoviedbDataSource(get()) }
-    single<IMoviesRepository>{ MoviesRepository(get()) }
+    single{ MovieLocalDataSource(get()) }
+    single{get<com.calyrsoft.ucbp1.features.movies.data.database.AppRoomDatabase>().movieDao()}
+    single<IMoviesRepository>{ MoviesRepository(get(), get()) }
     factory{ FetchMoviesUseCase(get()) }
     viewModel { MoviesViewModel(get()) }
 
