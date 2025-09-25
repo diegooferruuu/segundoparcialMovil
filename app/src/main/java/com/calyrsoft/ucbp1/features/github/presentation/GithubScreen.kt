@@ -50,14 +50,14 @@ fun GithubScreen( modifier: Modifier,
                 Text("Loading" )
             }
             is GithubViewModel.GithubStateUI.Success -> {
-                Text(st.github.nickname )
+                Text(st.github.nickname.value )
                 AsyncImage(
                     model = st.github.pathUrl,
                     contentDescription = null,
                     modifier = Modifier.size(100.dp),
                     contentScale = ContentScale.Crop,
                 )
-                Text(st.github.pathUrl)
+                Text(st.github.pathUrl.value)
             }
         }
     }

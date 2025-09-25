@@ -1,5 +1,12 @@
 package com.calyrsoft.ucbp1.di
 
+import com.calyrsoft.ucbp1.features.dollar.data.database.AppRoomDatabase
+import com.calyrsoft.ucbp1.features.dollar.data.repository.DollarRepository
+import com.calyrsoft.ucbp1.features.dollar.datasource.DollarLocalDataSource
+import com.calyrsoft.ucbp1.features.dollar.datasource.RealTimeRemoteDataSource
+import com.calyrsoft.ucbp1.features.dollar.domain.repository.IDollarRepository
+import com.calyrsoft.ucbp1.features.dollar.domain.usecase.FetchDollarUseCase
+import com.calyrsoft.ucbp1.features.dollar.presentation.DollarViewModel
 import com.calyrsoft.ucbp1.features.github.data.api.GithubSerivce
 import com.calyrsoft.ucbp1.features.github.data.datasource.GithubRemoteDataSource
 import com.calyrsoft.ucbp1.features.github.data.repository.GithubRepository
@@ -58,5 +65,13 @@ val appModule = module {
     single<ILoginRepository>{LoginRepository()}
     factory { LoginUsecase(get()) }
     viewModel { LoginViewModel(get()) }
+
+    single { AppRoomDatabase.getDatabase(get()) }
+    single { get<AppRoomDatabase>().dollarDao() }
+    single { RealTimeRemoteDataSource() }
+    single { DollarLocalDataSource(get()) }
+    single<IDollarRepository> { DollarRepository(get(), get()) }
+    factory { FetchDollarUseCase(get()) }
+    viewModel { DollarViewModel(get()) }
 
 }

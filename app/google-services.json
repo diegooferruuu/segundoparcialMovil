@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "668873666741",
+    "project_id": "ucbp1-c3c14",
+    "storage_bucket": "ucbp1-c3c14.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:668873666741:android:da10ccd05a19cb5a588efc",
+        "android_client_info": {
+          "package_name": "com.calyrsoft.ucbp1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBp_V4OlL1ovW2Q5_d7OP-7hRrCCoI3k48"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

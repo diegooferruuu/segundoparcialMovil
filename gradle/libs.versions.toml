@@ -17,6 +17,11 @@ composeBom = "2024.09.00"
 retrofit = "3.0.0"
 navcompose = "2.9.3"
 retrofitVersion = "2.9.0"
+googleGmsGoogleServices = "4.4.3"
+firebaseDatabase = "22.0.0"
+firebaseMessaging = "25.0.1"
+ksp = "2.0.20-1.0.24"
+room = "2.8.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -43,10 +48,26 @@ koin-androidx-navigation = { module = "io.insert-koin:koin-androidx-navigation",
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navcompose"}
 retrofit-v290 = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofitVersion" }
+firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
+firebase-messaging = { group = "com.google.firebase", name = "firebase-messaging", version.ref = "firebaseMessaging" }
+room-runtime = { group="androidx.room", name="room-runtime", version.ref="room"}
+room-compiler = { group="androidx.room", name="room-compiler", version.ref="room"}
+room-ktx = { group="androidx.room", name="room-ktx", version.ref="room"}
+room-rxjava2 = { group="androidx.room", name="room-rxjava2", version.ref="room"}
+room-rxjava3 = { group="androidx.room", name="room-rxjava3", version.ref="room"}
+room-guava = { group="androidx.room", name="room-guava", version.ref="room"}
+room-testing = { group="androidx.room", name="room-testing", version.ref="room"}
+room-paging = { group="androidx.room", name="room-paging", version.ref="room"}
 
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
+ksp = { id = "com.google.devtools.ksp", version.ref="ksp"}
+
+
+[bundles]
+local = ["room-runtime", "room-ktx", "room-rxjava2", "room-rxjava3", "room-guava", "room-paging" ]
 
