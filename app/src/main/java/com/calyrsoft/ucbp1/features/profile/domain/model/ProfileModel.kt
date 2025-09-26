@@ -1,3 +1,6 @@
 package com.calyrsoft.ucbp1.features.profile.domain.model
 
-data class ProfileModel(val nombre: String, val correo: String, val numero: String, val descripcion: String)
+import com.calyrsoft.ucbp1.features.profile.domain.valueobjects.*
+
+
+data class ProfileModel(val nombre: Nombre, val correo: Correo, val numero: Numero, val descripcion: Descripcion)

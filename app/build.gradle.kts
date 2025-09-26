@@ -76,4 +76,5 @@ dependencies {
     annotationProcessor(libs.room.compiler)
     ksp(libs.room.compiler)
     testImplementation(libs.room.testing)
+    testImplementation(kotlin("test"))
 }
