@@ -77,4 +77,7 @@ dependencies {
     ksp(libs.room.compiler)
     testImplementation(libs.room.testing)
     testImplementation(kotlin("test"))
+    testImplementation(libs.mockk)
+    testImplementation(libs.kotlinx.coroutines.test)
+
 }

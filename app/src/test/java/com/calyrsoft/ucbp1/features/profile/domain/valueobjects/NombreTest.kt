@@ -1,7 +1,5 @@
-package com.calyrsoft.ucbp1.features.profile.domain.model
+package com.calyrsoft.ucbp1.features.profile.domain.valueobjects
 
-import com.calyrsoft.ucbp1.features.profile.domain.valueobjects.Nombre
-import org.junit.Assert.assertThrows
 import org.junit.Test
 import kotlin.test.assertEquals
 import kotlin.test.fail

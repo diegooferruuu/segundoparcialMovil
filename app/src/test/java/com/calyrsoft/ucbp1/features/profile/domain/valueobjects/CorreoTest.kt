@@ -1,6 +1,5 @@
-package com.calyrsoft.ucbp1.features.profile.domain.model
+package com.calyrsoft.ucbp1.features.profile.domain.valueobjects
 
-import com.calyrsoft.ucbp1.features.profile.domain.valueobjects.Correo
 import junit.framework.TestCase.assertEquals
 import org.junit.Assert.fail
 import org.junit.Test
